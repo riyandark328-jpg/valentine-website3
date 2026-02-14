@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine's Day 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: pink;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.card{
+  background:white;
+  width:350px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+button{
+  background:#ff4d6d;
+  border:none;
+  padding:10px 20px;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+  margin-top:15px;
+}
+
+.hidden{display:none;}
+
+img{
+  width:100%;
+  border-radius:15px;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIK OTOMATIS -->
+<audio id="music" loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card" id="page1">
+  <h2>💖 Happy Valentine's Day 💖</h2>
+  <button onclick="nextPage(1)">Next →</button>
+</div>
+
+<div class="card hidden" id="page2">
+  <h3>For You 💌</h3>
+  <p>Aku sayang kamu bangettt 🥺💕</p>
+  <button onclick="nextPage(2)">Next →</button>
+</div>
+
+<div class="card hidden" id="page3">
+  <h3>Our Memories 📸</h3>
+  <img src="foto1.jpg">
+  <img src="foto2.jpg">
+  <button onclick="nextPage(3)">Finish 💖</button>
+</div>
+
+<div class="card hidden" id="page4">
+  <h2>💞 I Love You 💞</h2>
+</div>
+
+<script>
+function nextPage(num){
+  document.getElementById("page"+num).classList.add("hidden");
+  document.getElementById("page"+(num+1)).classList.remove("hidden");
+
+  // Musik mulai pas klik pertama
+  if(num === 1){
+    document.getElementById("music").play();
+  }
+}
+</script>
+
+</body>
+</html>
+
